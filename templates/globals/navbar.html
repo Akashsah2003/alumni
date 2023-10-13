@@ -37,6 +37,15 @@
 
             </li>
 
+            <li class="nav-item dropdown">
+                <a href="{% url 'events_news:events' %}"  class="dropdown-toggle nav-link " data-toggle="dropdown">Blogs&nbsp;<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="{% url 'blog:index' %}" class="dropdown-item">Blogs</a></li>
+                    <li><a href="{% url 'blog:createblog' %}" class="dropdown-item">Create Blog</a></li>
+                </ul>
+
+            </li>
+
             {% if user.is_authenticated %}
             <li class="nav-item">
                 <a class="nav-link js-scroll-trigger" href="{% url 'jobs:index' %}">Jobs</a>

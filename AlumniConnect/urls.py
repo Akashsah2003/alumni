@@ -62,6 +62,7 @@ urlpatterns += [
     re_path(r'favicon.ico', favicon_view),
     path('constitution/', views.constitution, name='constitution'),
     #path('', views.index, name='home'),
+    path('blog/', include('applications.blog.urls')),
 ]
 
 if settings.DEBUG:
@@ -71,7 +72,6 @@ if settings.DEBUG:
     urlpatterns = [
         path('__debug__/', include(debug_toolbar.urls)),
     ] + urlpatterns
-    
 admin.site.site_header = "IIITDMJ Alumni Association"
 admin.site.site_title = "Alumni Association"
 admin.site.index_title = "Alumni Association Admin"
