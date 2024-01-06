@@ -35,11 +35,14 @@ def view_blog(request, blogid):
 def create_blog(request):
     if request.method == 'POST':
         try:
+            if not request.user.is_authenticated:
+                return HttpResponse("You must be authenticated to create a blog!")
+            
+            
             author = request.user
             title = request.POST.get('title')
             description = request.POST.get('description')
-            image = request.POST.get('image')
-
+            image = request.FILES['image']
             print(author, title, description)
 
             created_blog = Blog.objects.create(

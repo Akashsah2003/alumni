@@ -31,9 +31,9 @@
                 <div class="row no-gutters p-3">
                     <div class="col-auto mx-auto p-1 pb-3 pb-lg-1">
                         {% if item.image %}
-                        <img src="{{ item.image }}" alt="" height= 200px width= 200px>
+                        <img src="{{ item.image.url }}" alt="" height= 200px width= 200px>
                         {% else %}
-                        <img src="{% static 'AlumniConnect/img/news.jpg' %}" alt="" height= 200px width= 200px>
+                        {% comment %} <img src="{% static 'AlumniConnect/img/news.jpg' %}" alt="" height= 200px width= 200px> {% endcomment %}
                         {% endif %}
                     </div>
                     <div class="col-lg-9">

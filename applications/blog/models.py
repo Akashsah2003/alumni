@@ -7,4 +7,4 @@ class Blog(models.Model):
     date_time_created = models.DateTimeField(blank=False, null=False, auto_now_add=True)
     title = models.CharField(max_length=50)
     description = models.TextField()
-    image = models.CharField(blank=True, max_length=50)
+    image = models.ImageField(upload_to='blogImages/')
